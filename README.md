@@ -1,7 +1,7 @@
 # sketch-toolbar-item
 A boilerplate/demo plugin for adding a toolbar icon in Sketch
 
-![Image](image.png)
+![Image](gh-image.png)
 
 ### How to use
 1. Copy the SketchToolbarIcon.framework bundle into your plugin's Resources folder
