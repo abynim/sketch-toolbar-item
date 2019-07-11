@@ -57,6 +57,14 @@ var registerToolbarActions = function(context) {
     
     SketchToolbarIcon.registerToolbarGroup_identifier_specifiers(context, 'salutations', [item1, item2]);
     
+    
+    // to register a toolbar item with a dropdown menu, create a menuItem for each sub-item then register them
+    let menuItem1 = SketchToolbarIcon.menuItemForToolbarAction_commandID_iconImagePath(context, 'hello', 'hello-toolbar-icon.png');
+    let menuItem2 = SketchToolbarIcon.menuItemForToolbarAction_commandID_iconImagePath(context, 'namaste', 'namaste-toolbar-icon.png');
+    let menuItem3 = SketchToolbarIcon.separatorMenuItem();
+    let menuItem4 = SketchToolbarIcon.menuItemForToolbarAction_commandID_iconImagePath(context, 'goodbye', 'goodbye-toolbar-icon.png');
+    SketchToolbarIcon.registerToolbarMenu_identifier_title_iconImagePath_menuItems(context, 'greetings', 'Greetings', 'hello-toolbar-icon.png', [menuItem1, menuItem2, menuItem3, menuItem4]);
+    
 }
 
 var loadFramework = function(context, cb) {
