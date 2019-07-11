@@ -49,21 +49,26 @@ var registerToolbarActions = function(context) {
     // 1. the current context
     // 2. the command identifier of the action this item will trigger
     // 3. the relative path to a 32x32px icon image in your plugin's Resources folder
-    SketchToolbarIcon.registerToolbarAction_commandID_iconImagePath(context, 'goodbye', 'goodbye-toolbar-icon.png');
+    
+    // To add a different image for dark mode, separate the image paths with a |
+    
+    SketchToolbarIcon.registerToolbarAction_commandID_iconImagePath(context, 'goodbye', 'goodbye-toolbar-icon.png|goodbye-toolbar-icon-dark.png');
     
     // to register a group of items, create specifiers for each item then register them as a group
-    let item1 = SketchToolbarIcon.specifierForToolbarAction_commandID_iconImagePath(context, 'namaste', 'namaste-toolbar-icon.png');
-    let item2 = SketchToolbarIcon.specifierForToolbarAction_commandID_iconImagePath(context, 'hello', 'hello-toolbar-icon.png');
+    let item1 = SketchToolbarIcon.specifierForToolbarAction_commandID_iconImagePath(context, 'namaste', 'namaste-toolbar-icon.png|namaste-toolbar-icon-dark.png');
+    let item2 = SketchToolbarIcon.specifierForToolbarAction_commandID_iconImagePath(context, 'hello', 'hello-toolbar-icon.png|hello-toolbar-icon-dark.png');
     
     SketchToolbarIcon.registerToolbarGroup_identifier_specifiers(context, 'salutations', [item1, item2]);
     
     
-    // to register a toolbar item with a dropdown menu, create a menuItem for each sub-item then register them
-    let menuItem1 = SketchToolbarIcon.menuItemForToolbarAction_commandID_iconImagePath(context, 'hello', 'hello-toolbar-icon.png');
-    let menuItem2 = SketchToolbarIcon.menuItemForToolbarAction_commandID_iconImagePath(context, 'namaste', 'namaste-toolbar-icon.png');
+    // to register a toolbar item with a dropdown menu, create a menuItem for each sub-item
+    let menuItem1 = SketchToolbarIcon.menuItemForToolbarAction_commandID_iconImagePath(context, 'hello', 'hello-toolbar-icon.png|hello-toolbar-icon-dark.png');
+    let menuItem2 = SketchToolbarIcon.menuItemForToolbarAction_commandID_iconImagePath(context, 'namaste', 'namaste-toolbar-icon.png|namaste-toolbar-icon-dark.png');
     let menuItem3 = SketchToolbarIcon.separatorMenuItem();
-    let menuItem4 = SketchToolbarIcon.menuItemForToolbarAction_commandID_iconImagePath(context, 'goodbye', 'goodbye-toolbar-icon.png');
-    SketchToolbarIcon.registerToolbarMenu_identifier_title_iconImagePath_menuItems(context, 'greetings', 'Greetings', 'hello-toolbar-icon.png', [menuItem1, menuItem2, menuItem3, menuItem4]);
+    let menuItem4 = SketchToolbarIcon.menuItemForToolbarAction_commandID_iconImagePath(context, 'goodbye', 'goodbye-toolbar-icon.png|goodbye-toolbar-icon-dark.png');
+    
+    // Then register them using the `registerToolbarMenu` method
+    SketchToolbarIcon.registerToolbarMenu_identifier_title_iconImagePath_menuItems(context, 'greetings', 'Greetings', 'greetings-toolbar-icon.png|greetings-toolbar-icon-dark.png', [menuItem1, menuItem2, menuItem3, menuItem4]);
     
 }
 
