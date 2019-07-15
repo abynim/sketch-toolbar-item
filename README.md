@@ -16,7 +16,7 @@ To see the module in action, check out the demo plugin [https://github.com/abyni
 
 ### Import the module
 ```js
-import SketchToolbarIcon from 'sketch-toolbar-item'
+import SketchToolbar from 'sketch-toolbar-item'
 ```
 
 ### Define a Startup handler for your plugin in manifest.json
@@ -49,32 +49,32 @@ Pass in the following arguments
 - the identifier of the command this action will trigger
 - and a relative path to an icon image (32x32px) from your plugin's Resources folder. To include a separate image for dark mode, separate the image paths with `|`.
 ```js
-// SketchToolbarIcon.registerToolbarAction(context, commandIdentifier, iconImagePath)
-SketchToolbarIcon.registerToolbarAction(context, 'goodbye', 'goodbye-toolbar-icon.png|goodbye-toolbar-icon-dark.png')
+// SketchToolbar.registerToolbarAction(context, commandIdentifier, iconImagePath)
+SketchToolbar.registerToolbarAction(context, 'goodbye', 'goodbye-toolbar-icon.png|goodbye-toolbar-icon-dark.png')
 ```
 
 #### Register a group of toolbar actions
 First, create specifiers for each action, then register them as a group
 ```js
-// SketchToolbarIcon.specifierForToolbarAction(context, commandIdentifier, iconImagePath)
-let item1 = SketchToolbarIcon.specifierForToolbarAction(context, 'namaste', 'namaste-toolbar-icon.png|namaste-toolbar-icon-dark.png')
-let item2 = SketchToolbarIcon.specifierForToolbarAction(context, 'hello', 'hello-toolbar-icon.png|hello-toolbar-icon-dark.png')
+// SketchToolbar.specifierForToolbarAction(context, commandIdentifier, iconImagePath)
+let item1 = SketchToolbar.specifierForToolbarAction(context, 'namaste', 'namaste-toolbar-icon.png|namaste-toolbar-icon-dark.png')
+let item2 = SketchToolbar.specifierForToolbarAction(context, 'hello', 'hello-toolbar-icon.png|hello-toolbar-icon-dark.png')
 
-// SketchToolbarIcon.registerToolbarGroup(context, groupIdentifier, specifiers)
-SketchToolbarIcon.registerToolbarGroup(context, 'salutations', [item1, item2])
+// SketchToolbar.registerToolbarGroup(context, groupIdentifier, specifiers)
+SketchToolbar.registerToolbarGroup(context, 'salutations', [item1, item2])
 ```
 
 #### Register a toolbar item with a dropdown menu
 First, create menuItems for each sub-item, then register them as a toolbar menu
 ```js
-// SketchToolbarIcon.menuItemForToolbarAction(context, commandIdentifier, iconImagePath)
-let menuItem1 = SketchToolbarIcon.menuItemForToolbarAction(context, 'hello', 'hello-toolbar-icon.png|hello-toolbar-icon-dark.png')
-let menuItem2 = SketchToolbarIcon.menuItemForToolbarAction(context, 'namaste', 'namaste-toolbar-icon.pngnamaste-toolbar-icon-dark.png')
-let menuItem3 = SketchToolbarIcon.separatorMenuItem()
-let menuItem4 = SketchToolbarIcon.menuItemForToolbarAction(context, 'goodbye', 'goodbye-toolbar-icon.png|goodbye-toolbar-icon-dark.png')
+// SketchToolbar.menuItemForToolbarAction(context, commandIdentifier, iconImagePath)
+let menuItem1 = SketchToolbar.menuItemForToolbarAction(context, 'hello', 'hello-toolbar-icon.png|hello-toolbar-icon-dark.png')
+let menuItem2 = SketchToolbar.menuItemForToolbarAction(context, 'namaste', 'namaste-toolbar-icon.pngnamaste-toolbar-icon-dark.png')
+let menuItem3 = SketchToolbar.separatorMenuItem()
+let menuItem4 = SketchToolbar.menuItemForToolbarAction(context, 'goodbye', 'goodbye-toolbar-icon.png|goodbye-toolbar-icon-dark.png')
 
-// SketchToolbarIcon.registerToolbarMenu(context, menuIdentifier, iconImagePath, menuItems)
-SketchToolbarIcon.registerToolbarMenu(context, 'greetings', 'Greetings', 'greetings-toolbar-icon.png|greetings-toolbar-icon-dark.png', [menuItem1, menuItem2, menuItem3, menuItem4])
+// SketchToolbar.registerToolbarMenu(context, menuIdentifier, iconImagePath, menuItems)
+SketchToolbar.registerToolbarMenu(context, 'greetings', 'Greetings', 'greetings-toolbar-icon.png|greetings-toolbar-icon-dark.png', [menuItem1, menuItem2, menuItem3, menuItem4])
 ```
 
 ### Validate toolbar items (optional)
