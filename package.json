@@ -1,0 +1,22 @@
+{
+  "name": "sketch-toolbar-item",
+  "version": "0.1.2",
+  "description": "A module for adding toolbar items in Sketch",
+  "main": "sketch-toolbar-icon.js",
+  "scripts": {
+    "test": "echo \"No test specified\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abynim/sketch-toolbar-item.git"
+  },
+  "author": "Aby Nimbalkar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/abynim/sketch-toolbar-item/issues"
+  },
+  "homepage": "https://github.com/abynim/sketch-toolbar-item#readme",
+  "devDependencies": {
+    "@skpm/xcodeproj-loader": "^0.1.6"
+  }
+}
