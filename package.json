@@ -1,6 +1,6 @@
 {
   "name": "sketch-toolbar-item",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "A module for adding toolbar items in Sketch",
   "main": "sketch-toolbar-icon.js",
   "scripts": {
